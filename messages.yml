@@ -11,7 +11,7 @@ MustBeInGame: '&cYou must on kitpvp to execute this command'
 ArrowHit-Message: '&b%player% &7is on &c%health%&7 health.'
 StreakDestroyed: '&cYour killstreak has been destroyed by &e%player%'
 CoinsDoubled: '&bYou receive %coins% Coins (2X)'
-
+SpawnSeted: '&aYou seted the THEPIT spawn'
 
 
 #Status message when you click stats item

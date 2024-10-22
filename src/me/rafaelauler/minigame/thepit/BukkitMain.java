@@ -5,7 +5,9 @@ package me.rafaelauler.minigame.thepit;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -234,9 +236,21 @@ loadTopPlayersHologram();
     	PluginManager pm = Bukkit.getPluginManager();
     	Bukkit.getConsoleSender().sendMessage("[THEPIT] EVENTS STARTED");
     	pm.registerEvents(new Eventos(), this);
+    	Metrics metrics = new Metrics(this);
+    	metrics.addCustomChart(new Metrics.DrilldownPie("serverAddress", () -> {
+    		Map<String, Map<String, Integer>> map = new HashMap<>();
+    		Map<String, Integer> entry = new HashMap<>();
+    	
+    		if (getConfig().getBoolean("SendIPAddressData")) entry.put(Bukkit.getServer().getIp(), 1);
+    		else entry.put("Hidden", 1);
+    		
+    		map.put("Port " + Bukkit.getServer().getPort(), entry);
+    		
+    		return map;
+    	}));
     	pm.registerEvents(new StatusGUI(), this);
     	pm.registerEvents(new BlockCommands(this), this);
-
+    	pm.registerEvents(new ThePitEditMode(), this);
     	pm.registerEvents(new AntiDeathDrop(this), this);
        	pm.registerEvents(new Streak(), this);
     }

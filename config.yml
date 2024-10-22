@@ -56,7 +56,8 @@ Permission: '&cSorry, but you dont have the permission to use this.'
 Message:
   ThePitJoin-Message: '&eYou join in the ThePit'
   ThePitLeave-Message: '&eYou leave the ThePit'
-  BlockedCMD-OnThePit: '&eThis command cannot be perfomed on ThePit!'
+  BlockedCMD-OnThePit: '&eThis command cannot be perfomed on ThePit! Write /thepit leave to leave!'
+  Clear: '&eYou returned to the THEPIT spawn'
 
 
 #Title settings
@@ -168,6 +169,7 @@ BLOCKED_COMMANDS:
 - /home
 - /ehome
 - /is
+- /spawn
 - /island
 - /mines
 status:

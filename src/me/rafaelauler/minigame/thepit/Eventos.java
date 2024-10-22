@@ -27,6 +27,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -35,6 +36,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
+
 
 
 
@@ -312,10 +314,38 @@ import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
 		
 						}
 						
-					}.runTaskTimer(BukkitMain.getInstance(), 0L, 5L);
+					}.runTask(BukkitMain.getInstance());
+new BukkitRunnable() {
+						
+						
+						
+						@Override
+						public void run() {
+							/*     */      World w = Bukkit.getServer().getWorld(BukkitMain.plugin.getConfig().getString("SpawnD.World"));
+							/* 153 */      double x = BukkitMain.plugin.getConfig().getDouble("SpawnD.X");
+							/* 154 */      double y = BukkitMain.plugin.getConfig().getDouble("SpawnD.Y");
+							/* 155 */      double z = BukkitMain.plugin.getConfig().getDouble("SpawnD.Z");
+							/* 156 */      Location lobby = new Location(w, x, y, z);
+							/* 157 */      lobby.setPitch((float)BukkitMain.plugin.getConfig().getDouble("SpawnD.Pitch"));
+							/* 158 */      lobby.setYaw((float)BukkitMain.plugin.getConfig().getDouble("SpawnD.Yaw"));
+p.teleport(lobby);
+						}}.runTaskLater(BukkitMain.getInstance(), 10L);
 				}
 		
-		
+
+		 @EventHandler
+		    public void Quebrar(final PlayerMoveEvent e) {
+		        final Player p = e.getPlayer();
+		        final ItemStack item1 = p.getItemInHand();
+		        if (!MainCommand.game.contains(p.getName())) {
+		        	return;
+		        }
+		        final Material material1 = Material.getMaterial(item1.getType().toString());
+		        if (!material1.isBlock() && (!(material1 == Material.LEATHER_LEGGINGS)) && (!(material1 == Material.LEATHER_HELMET)) && (!(material1 == Material.IRON_HELMET)) && (!(material1 == Material.IRON_CHESTPLATE)) && (!(material1 == Material.IRON_BOOTS)) && (!(material1 == Material.IRON_LEGGINGS)) && (!(material1 == Material.LEATHER_BOOTS)) && (!(material1 == Material.GOLDEN_CHESTPLATE	        	)) && (!(material1 == Material.GOLDEN_HELMET)) && (!(material1 == Material.CHAINMAIL_CHESTPLATE)) && (!(material1 == Material.CHAINMAIL_HELMET)) && (!(material1 == Material.CHAINMAIL_BOOTS)) && (!(material1 == Material.CHAINMAIL_LEGGINGS)) && material1.getMaxDurability() >= 1 && item1.getDurability() != 0) {
+		            p.getItemInHand().setDurability((short)0);
+		            p.updateInventory();
+		        }
+		 }
 		
 		
 		/*     */   @EventHandler
