@@ -236,7 +236,7 @@ loadTopPlayersHologram();
     	PluginManager pm = Bukkit.getPluginManager();
     	Bukkit.getConsoleSender().sendMessage("[THEPIT] EVENTS STARTED");
     	pm.registerEvents(new Eventos(), this);
-    	Metrics metrics = new Metrics(this);
+    	Metrics metrics = new Metrics(this, 23696);
     	metrics.addCustomChart(new Metrics.DrilldownPie("serverAddress", () -> {
     		Map<String, Map<String, Integer>> map = new HashMap<>();
     		Map<String, Integer> entry = new HashMap<>();
