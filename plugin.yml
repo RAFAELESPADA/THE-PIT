@@ -1,0 +1,15 @@
+name: THE-PIT
+author: Rafael Auler
+main: me.rafaelauler.minigame.thepit.Main
+version: BUILD-1
+loadbefore: [KPCore]
+commands:
+  thepit:
+  thepithelp:
+  thepiteditmode:
+  setthepittopkills:
+  updatethepittopkill:
+  
+  
+  
+  

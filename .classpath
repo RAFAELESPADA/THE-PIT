@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/spigot-api-1.21.1-R0.1-20241006.210546-49.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/BEDWARS/plugins/TAB v4.1.6 (2).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/BEDWARS/plugins/LuckPerms-Bukkit-5.4.134.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/lombok.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBOPVP - KAWS/KP-CORE-v3.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/EVENTOS/plugins/Vault.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/EVENTOS/plugins/PlaceholderAPI-2.11.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/LOBBY/plugins/DecentHolograms-2.8.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/PRISON/plugins/ajLeaderboards-2.8.0 (6).jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,200 @@
+#ThePit Version BUILD-1 | Author: zEnderX5_ , Rafael Auler
+#Author Channel: https://www.youtube.com/channel/UCb1kjbiQj2B4KnRQpgeUwmQ
+#Subscribe to help me to improve the plugin. Thanks =D
+#PS: use /kp for view the plugin command list
+#ALL MESSAGES SUPPORT COLORS! 
+#View all colors here: http://minecraft.tools/en/color-code.php
+#The plugin only works on 1.7 if you use BUILD-10 or lower
+#BUILD-14 is for 1.8 or greater servers
+
+#Prefix settings
+Prefix: '&8[&cThePit&8] '
+
+ScoreBoardEnabled: false 
+
+#Interval to update the scoreboard
+ScoreBoard-Interval-Update: 3
+
+#Use vault instead of coins
+UseVault: false
+
+#If this is enable the perworldsupport is disabled
+#and players is automatically put on ThePit when they join the server
+#and will be unable to leave
+bungeemode: false
+
+#Execute commands on the killer and killed on kills
+#Placeholders #killer and %killed%
+Commands-ON-KILL-Enabled: false
+Commands-Executed-On-Kill:
+- 'givecoins %killer% 50'
+- 'effect %killed% speed 20'
+
+
+#If this is false the player will leave ThePit when they change world
+#BungeeMode needs to be false to it works
+DisableWorldLeaveThePitEvent: false
+
+#If this is true all players will be able to build and place blocks while on ThePit
+#If false only players that write /kpeditmode (Needs permission) will be able to build
+EnableBuildingOnThePit: false
+
+#If this is true when players quit the server they will remain on ThePit
+#Dont enable this with bungeemode: true
+PlayersRemainOnThePitOnLeave: false
+
+
+
+disable-negation-of-ajleaderboards-no-update-permission: false
+
+#No Permission Message 
+#ALL PERMISSIONS IS LISTED HERE: https://pastebin.com/JuMPHpRD
+Permission: '&cSorry, but you dont have the permission to use this.'
+
+
+#Message settings
+Message:
+  ThePitJoin-Message: '&eYou join in the ThePit'
+  ThePitLeave-Message: '&eYou leave the ThePit'
+  BlockedCMD-OnThePit: '&eThis command cannot be perfomed on ThePit!'
+
+
+#Title settings
+#Only works on 1.8 or greater servers
+Title:
+  DeathTitle: '&cYou died'
+  DeathSubTitle: '&7You are respawning'
+  JoinTitle: '&eYou joined on the ThePit'
+  JoinSubTitle: '&eHave a great game!'
+  LeaveTitle: '&cYou leave the ThePit!'
+  LeaveSubTitle: '&cTo join again use: /ThePit join'
+#Respawn settings
+RespawnSound: true
+
+#Sound list: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+Sound:
+  Kit: 'ITEM_PICKUP'
+  ShopMenu: 'CHEST_OPEN'
+  KitUse: 'ENDERDRAGON_HIT'
+  Soup: 'EAT'
+  Fisherman: 'ENDERMAN_TELEPORT'
+  Spiderman: 'SLIME_WALK'
+  Respawn: 'LEVEL_UP'
+  Join: 'LEVEL_UP'
+  KitMenu: 'DOOR_CLOSE'
+  SpongeUse: 'ENDERMAN_TELEPORT'
+  BowlDrop: 'ITEM_PICKUP'
+  ErrorMessage: 'ARROW_HIT'
+  ItemDespawn: 'LAVA_POP'
+  SucefullMessage: 'ORB_PICKUP'
+  NoPermissionMessage: 'WITHER_SHOOT'
+  SwitcherShoot: 'ENDERMAN_TELEPORT'
+  Timelord: 'WITHER_SPAWN'
+  Stomper: 'FIREWORK_BLAST'
+  NarutoAbility: 'BLAZE_DEATH'
+  CommandsSounds: 'BURP'
+  ShopMenu-Click: 'LEVEL_UP'
+  Streak: 'LEVEL_UP'
+  Airman-Fly: 'ENDERMAN_SCREAM'
+  DoubleJump-Ability: 'FIREWORK_BLAST2'
+  StomperDamage: 'ANVIL_LAND'
+  1v1: 'CLICK'
+  ClickTest: 'CLICK'
+  AnchorHit: 'ANVIL_BREAK'
+  RyuAbility: 'EXPLODE'
+  Respawning: 'CLICK'
+  RespawnSucess: 'ORB_PICKUP'
+
+
+#Enable or disable command block feature on ThePit
+#true means enabled / false means disabled
+#Defaults to true
+EnableCommandBlockingInThePit: true
+
+#Enable or disable hunger on ThePit
+DisableHungerOnThePit: true
+
+#Enable or disable dropping items while in ThePit
+#If this is true the player cannoy drop anhyting except bowls
+#If this is false he can drop any item
+#Recommended to leave this true
+#Defaults to true
+DisableDropsOnThePit: true
+
+#Enable or disable pickup items on ThePit
+#If this is true the player can only pickup mushroom soups and bowls
+#If this is false the player can pickup any items
+#Defaults to true
+DisablePickupItemsOnThePit: true
+
+#Clear items that are dropped on ground in ThePit?
+ClearItemsOnGround: true
+
+#The time in seconds to the time be cleared from the ground
+ClearInterval: 10
+  
+Death:
+#death message
+  Tell: 'You have died to %player%! You lost 50 coins.'
+  
+#kill message  
+Kill:
+  Tell: 'You killed %player%, you earned 100 coins.'
+
+
+ # Enable sending your server address to bStats? This could get you a couple more players. =)
+ # Defaults to true
+SendIPAddressData: true
+
+#Change the sponge boost
+#Be careful when changing that number
+#It is the amplifier multiplier of sponge boost
+#too high numbers can throw you to minecraft space! 
+#Play around with that number to see what you want in sponge boost
+SpongeBoostAmplifier: 8
+
+#Put here the cmds that are be blocked in ThePit
+#Bypass permission: ThePit.unblockedcmds
+BLOCKED_COMMANDS:
+- /warp
+- /ewarp
+- /tpa
+- /etpa
+- /server
+- /sw
+- /skywars
+- /bw
+- /bedwars
+- /home
+- /ehome
+- /is
+- /island
+- /mines
+status:
+  retaliado1:
+    kills: 2
+    deaths: 0
+  retaliado2:
+    kills: 2
+    deaths: 0
+Spawn:
+  World: world
+  X: 45.80294662701026
+  Y: 124.86933315841993
+  Z: -91.71575866737658
+  Pitch: 42.90001
+  Yaw: -9.5999975
+SpawnD:
+  World: world
+  X: 45.80294662701026
+  Y: 124.86933315841993
+  Z: -91.71575866737658
+  Pitch: 42.90001
+  Yaw: -9.5999975  
+  
+  
+
+
+ 
+
+  
