@@ -1,6 +1,6 @@
 name: THE-PIT
 author: Rafael Auler
-main: me.rafaelauler.minigame.thepit.Main
+main: me.rafaelauler.minigame.thepit.BukkitMain
 version: BUILD-1
 loadbefore: [KPCore]
 api-version: 1.20
