@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
+import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.core.bukkit.account.WavePlayer;
 
@@ -47,6 +48,8 @@ public class AntiDeathDrop
 	  if (MainCommand.game.contains(p.getName()))
       {
 		  e.getDrops().clear(); 
+	    	TitleAPI.sendTitle(p, Integer.valueOf(40), Integer.valueOf(80), Integer.valueOf(40), BukkitMain.getInstance().getConfig().getString("Title.DeathTitle"), BukkitMain.getInstance().getConfig().getString("Title.DeathSubTitle"));
+
       }
   }
 
@@ -62,7 +65,7 @@ public class AntiDeathDrop
 		  WavePlayer killerHelixPlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
 			
 	      
-	    return killerHelixPlayer.getPvp().getKills();
+	    return killerHelixPlayer.getPvp().getThepitkills();
 	  }
 	 
 	  
@@ -74,7 +77,7 @@ public class AntiDeathDrop
 		  WavePlayer killerHelixPlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
 			
 	      
-		    return killerHelixPlayer.getPvp().getDeaths();
+		    return killerHelixPlayer.getPvp().getThepitdeaths();
 	  }
 }
 

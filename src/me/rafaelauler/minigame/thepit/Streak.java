@@ -61,7 +61,7 @@ if (!MainCommand.game.contains(k.getName())) {
 WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(k.getName());
 	
 if (isCitizensNPC && BukkitMain.getInstance().getConfig().getBoolean("BotsKillsAllowed")) {
-	Sun8oxData.getPvp().addKills(1);
+	Sun8oxData.getPvp().addthepitkills(1);
 	if (killstreak % BukkitMain.customization.getInt("XP-Required-To-LevelUP") == 0) {
 		Streak.sendToGame(String.valueOf(MainCommand.NomeServer + BukkitMain.messages.getString("LevelUP").replaceAll("%player%", k.getName()).replaceAll("%level%", Integer.toString(Level.getLevel(k)))).replaceAll("&", "§"));
 	}
@@ -83,9 +83,9 @@ if (isCitizensNPC && BukkitMain.getInstance().getConfig().getBoolean("BotsKillsA
 
 /*  53 */       addtokillstreak(k);
 BukkitMain.tirarEfeitos(p);        
-Sun8oxData.getPvp().addKills(1);
-Sun8oxData2.getPvp().addDeaths(1);
-Sun8oxData.getPvp().addKillstreak(1);
+Sun8oxData.getPvp().addthepitkills(1);
+Sun8oxData2.getPvp().addthepitdeaths(1);
+Sun8oxData.getPvp().addthepitstreak(1);
   if (BukkitMain.getInstance().getConfig().getBoolean("Commands-ON-KILL-Enabled")) {
 	  for (String commands : BukkitMain.getInstance().getConfig().getStringList("Commands-Executed-On-Kill")) {
 	  Bukkit.dispatchCommand(Bukkit.getConsoleSender(), commands.replace("%killer%", k.getName()).replace("%killed%", p.getName()));
@@ -132,7 +132,7 @@ ItemStack maça = new ItemStack(Material.GOLDEN_APPLE);
 
 	  WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 		       int kills = Sun8oxData.getPvp().getKillstreak();
-/*     */      Sun8oxData.getPvp().addKillstreak(1);
+/*     */      Sun8oxData.getPvp().addthepitstreak(1);
 if (kills != 0) {
 killer.sendMessage(MainCommand.NomeServer + "" + ChatColor.GREEN + "You are on " + ChatColor.RED + Integer.toString(kills) + ChatColor.GREEN + " Killstreak.");
 }

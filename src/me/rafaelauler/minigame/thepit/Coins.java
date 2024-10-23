@@ -51,7 +51,7 @@ public static HashMap<String, Double> bal = new HashMap();
 if (!VAULTON) {
       WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
 		
-	  Sun8oxData.getPvp().addCoins(amount); 
+	  Sun8oxData.getPvp().addgold(amount); 
 } else {
 
 		  econ.depositPlayer(player, amount); 
@@ -70,7 +70,7 @@ if (!VAULTON) {
 return (int) econ.getBalance(player);		
 		}
 		else {
-	  return  Sun8oxData.getPvp().getCoins();
+	  return  Sun8oxData.getPvp().getGold();
   }
   }
 
@@ -78,12 +78,12 @@ return (int) econ.getBalance(player);
   {
 	  if (!VAULTON) {
       WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-		if (Sun8oxData.getPvp().getCoins() > amount) {
-	  Sun8oxData.getPvp().removeCoins(amount);
+		if (Sun8oxData.getPvp().getGold() > amount) {
+	  Sun8oxData.getPvp().setGold(Sun8oxData.getPvp().getGold() - amount);
   }
   	else {
 
-  	  Sun8oxData.getPvp().setCoins(0);
+  	  Sun8oxData.getPvp().setGold(0);
   	}
   }
 	  else {

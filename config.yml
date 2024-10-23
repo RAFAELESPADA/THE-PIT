@@ -64,7 +64,7 @@ Message:
 #Only works on 1.8 or greater servers
 Title:
   DeathTitle: '&cYou died'
-  DeathSubTitle: '&7You are respawning'
+  DeathSubTitle: '&7Try again'
   JoinTitle: '&eYou joined on the ThePit'
   JoinSubTitle: '&eHave a great game!'
   LeaveTitle: '&cYou leave the ThePit!'

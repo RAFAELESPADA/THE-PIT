@@ -10,11 +10,11 @@
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/BEDWARS/plugins/TAB v4.1.6 (2).jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/BEDWARS/plugins/LuckPerms-Bukkit-5.4.134.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/lombok.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBOPVP - KAWS/KP-CORE-v3.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/EVENTOS/plugins/Vault.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/EVENTOS/plugins/PlaceholderAPI-2.11.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/LOBBY/plugins/DecentHolograms-2.8.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO BACKUP TOTAL/PRISON/plugins/ajLeaderboards-2.8.0 (6).jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/json-simple-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/eclipse-workspace/WaveCore/target/KP-CORE-v3.5.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

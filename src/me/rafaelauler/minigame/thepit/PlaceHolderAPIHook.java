@@ -131,7 +131,7 @@ import net.wavemc.core.bukkit.account.WavePlayer;
     	if (Sun8oxData == null) {
     		  return "0";
     	  }
-		int kills = Sun8oxData.getPvp().getKillstreak();
+		int kills = Sun8oxData.getPvp().getThepitstreak();
       
     return Integer.toString(kills);
     }
