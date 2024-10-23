@@ -135,7 +135,7 @@ import net.wavemc.core.bukkit.account.WavePlayer;
       
     return Integer.toString(kills);
     }
-    if (indentifier.equals("player_coins")) {
+    if (indentifier.equals("player_gold")) {
         Integer coins = Coins.getCoins(p);
         return Integer.toString(coins);
       }

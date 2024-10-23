@@ -45,7 +45,7 @@ public class GoldCommand implements CommandExecutor {
 					Coins.addCoins(target, coins);
 					WavePlayer t1 = WaveBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
 				 WaveBukkit.getInstance().getPlayerManager().getController().save(t1);
-					sender.sendMessage( "§eYou give the player " + target.getName() + "" + coins
+					sender.sendMessage( "§eYou give the player " + target.getName() + " " + coins
 							+ "§b Coins");
 					target.sendMessage( "§eYou receive " + coins
 							+ " §bGOLD");
