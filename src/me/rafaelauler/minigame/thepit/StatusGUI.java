@@ -90,7 +90,7 @@ public class StatusGUI implements Listener {
         	int kills = AntiDeathDrop.GetKills(p);
             int deaths = AntiDeathDrop.GetDeaths(p);
             WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-    		int ks = Sun8oxData.getPvp().getKillstreak();
+    		int ks = Sun8oxData.getPvp().getThepitstreak();
             p.sendMessage(BukkitMain.messages.getString("Status").replace("&", "§").replace("%player%", p.getName()));
             p.sendMessage("");
             p.sendMessage(BukkitMain.messages.getString("StatusKills").replace("&", "§") + kills);
