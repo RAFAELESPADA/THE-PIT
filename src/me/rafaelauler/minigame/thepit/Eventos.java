@@ -2,7 +2,9 @@ package me.rafaelauler.minigame.thepit;
 
 
 
-	import org.bukkit.Bukkit;
+	import java.util.ArrayList;
+
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import 
 org.bukkit.Effect;
@@ -10,6 +12,7 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -19,6 +22,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -34,6 +38,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.Vector;
 
 import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
 
@@ -67,8 +72,78 @@ import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
 		/*    */       }
 		/*    */     }
 		/*    */   }
-		/*    */   
+		/*    */   		/*    */ 
 		/*    */ 
+		/* 37 */   ArrayList<String> fall = new ArrayList<>();
+		/*    */   ArrayList<String> fall2 = new ArrayList<>();
+		public void Atirar(Player p) {
+			int y = 8;
+			Block block = p.getLocation().getBlock().getRelative(0, -1, 0);
+			if (block.getType() == Material.SPONGE && MainCommand.game.contains(p.getName())) {
+				Vector vector = new Vector(0, y, 0);
+				p.setVelocity(vector);
+				this.fall.remove(p.getName());
+				p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.MOBSPAWNER_FLAMES, 10);
+				this.fall.add(p.getName());
+			}
+		}
+		public void Atirar2(Player p) {
+			final Location loc = p.getEyeLocation();
+
+		    final Vector sponge = p.getLocation().getDirection().multiply(3.8).setY(0.45);
+			Block block = p.getLocation().getBlock().getRelative(0, -1, 0);
+			if (block.getType() == Material.SLIME_BLOCK && MainCommand.game.contains(p.getName())) {
+				p.setVelocity(sponge);
+			    p.playEffect(loc, Effect.MOBSPAWNER_FLAMES, (Object)null);
+				this.fall2.remove(p.getName());
+				this.fall2.add(p.getName());
+			}
+		}
+		@EventHandler
+		public void RemoverDan2o(EntityDamageEvent e) 
+		{
+		   if (!(e.getEntity() instanceof Player)) {
+		       return;
+		   }
+		   Player p = (Player) e.getEntity();
+		   if (e.getCause() == EntityDamageEvent.DamageCause.FALL && this.fall2.contains(p.getName()) && e.getEntity().getLocation().getY() < BukkitMain.plugin.getConfig().getInt("Spawn.Y") && MainCommand.game.contains(p.getName()) && p.getWorld().equals(Bukkit.getWorld(BukkitMain.plugin.getConfig().getString("Spawn.World"))))  {
+			   e.setCancelled(true);
+		
+			      /*    */     }
+			      /*    */     
+			   /*    */     
+		   this.fall2.remove(p.getName());
+		   }
+
+		@EventHandler
+		private void Jumps(PlayerMoveEvent e) {
+			Player p = e.getPlayer();
+			Atirar(p);
+			Atirar2(p);
+		}
+
+		 
+		   @EventHandler
+			public void RemoverDano(EntityDamageEvent e) 
+			{
+			   if (!(e.getEntity() instanceof Player)) {
+		           return;
+		       }
+				Player p = (Player) e.getEntity();
+				if (e.getCause() == EntityDamageEvent.DamageCause.FALL && this.fall.contains(p.getName())) 
+				{
+					this.fall.remove(p.getName());
+					e.setCancelled(true);
+
+				}
+				else if(e.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK)
+				{
+					this.fall.remove(p.getName());
+				}
+			}
+			
+		
+
 		/*    */   @org.bukkit.event.EventHandler
 		/*    */   public void onPlayerPickupItem(PlayerPickupItemEvent paramPlayerPickupItemEvent)
 		/*    */   {

@@ -194,6 +194,8 @@ if (args[0].equalsIgnoreCase("spawn"))
 
 	ItemStack bota = new ItemStack(Material.CHAINMAIL_BOOTS);
 	/*     */ p.getInventory().clear();
+
+	p.getInventory().setArmorContents(null);
 	/* 107 */       p.updateInventory();
 	/*     */       p.getInventory().setItem(0, espada);
 
@@ -206,7 +208,6 @@ if (args[0].equalsIgnoreCase("spawn"))
 	/*     */ 
 	/* 107 */       p.updateInventory();
 	/*  90 */       p.teleport(lobby);
-	p.getInventory().setArmorContents(null);
 
 	/*     */ 
 	/* 107 */       p.updateInventory();
