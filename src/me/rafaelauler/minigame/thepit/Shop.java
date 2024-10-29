@@ -18,7 +18,7 @@ public class Shop
   implements Listener
 {
   private BukkitMain main;
-  public static Inventory shop = Bukkit.getServer().createInventory(new CustomHolder3(), 27, BukkitMain.messages.getString("ShopInventoryName").replace("&", "§"));
+  public static Inventory shop = Bukkit.getServer().createInventory(new CustomHolder2(), 27, BukkitMain.messages.getString("ShopInventoryName").replace("&", "§"));
   
   static
   {
