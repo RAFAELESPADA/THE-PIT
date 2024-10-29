@@ -104,9 +104,11 @@ if (e.getClickedInventory() == null) {
 	  	
 	    if (Coins.getCoins(p) >= 250)
 	    {
+	    	if (p.getInventory().getHelmet() != null) {
 	    	if (p.getInventory().getHelmet().equals(new ItemStack(Material.IRON_HELMET))) {
 	    		p.sendMessage(ChatColor.RED +"You already has that upgrade! You need to die to buy it again");
 	    		return;
+	    	}
 	    	}
 	      p.getInventory().setHelmet(new ItemStack(Material.IRON_HELMET));
 	      Coins.removeCoins(p, 250);
@@ -125,6 +127,8 @@ if (e.getClickedInventory() == null) {
 	  	
 	    if (Coins.getCoins(p) >= 350)
 	    {
+
+	    	if (p.getInventory().getLeggings() != null) {
 	    	if (p.getInventory().getLeggings().equals(new ItemStack(Material.DIAMOND_LEGGINGS))) {
 	    		p.sendMessage(ChatColor.RED +"You already has that upgrade! You need to die to buy it again");
 	    		return;
