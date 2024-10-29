@@ -127,6 +127,7 @@ loadTopPlayersHologram();
   getCommand("thepiteditmode").setExecutor(new ThePitEditMode());
   getCommand("thepithelp").setExecutor(new THEPITHELP());
   getCommand("givegold").setExecutor(new GoldCommand());
+  getCommand("thepitkickall").setExecutor(new PTKICK());
   File cf = new File(getDataFolder(), "config.yml");
   /* 127 */     if (!cf.exists()) {
   /* 128 */       saveResource("config.yml", false);
