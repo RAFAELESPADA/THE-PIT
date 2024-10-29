@@ -80,10 +80,31 @@ if (e.getClickedInventory() == null) {
   if (e.getCurrentItem() == null) {
     return;
   }
+
+  if ((clicked.getType() == Material.ENCHANTED_GOLDEN_APPLE)) {
+	  	
+	    if (Coins.getCoins(p) >= 1200)
+	    {
+		      p.getInventory().addItem(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));
+	      Coins.removeCoins(p, 1200);
+	      e.setCancelled(true);
+	      return;
+	    }
+	    else if (Coins.getCoins(p) < 1200)
+	    {
+	      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
+	      e.setCancelled(true);
+	    }
+	  }
   if ((clicked.getType() == Material.DIAMOND_SWORD)) {
   	
     if (Coins.getCoins(p) >= 200)
     {
+
+    	if (p.getInventory().getItem(0) == null) {
+    		p.sendMessage("Put your sword on the first slot to purchase this upgrade!");
+    		return;
+    	}
     	if (p.getInventory().getItem(0).equals(new ItemStack(Material.DIAMOND_SWORD))) {
     		p.sendMessage(ChatColor.RED +"You already has that upgrade! You need to die to buy it again");
     		return;
@@ -140,21 +161,6 @@ if (e.getClickedInventory() == null) {
 	      return;
 	    }
 	    else if (Coins.getCoins(p) < 250)
-	    {
-	      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
-	      e.setCancelled(true);
-	    }
-	  }
-  if ((clicked.getType() == Material.ENCHANTED_GOLDEN_APPLE)) {
-	  	
-	    if (Coins.getCoins(p) >= 1200)
-	    {
-		      p.getInventory().addItem(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));
-	      Coins.removeCoins(p, 1200);
-	      e.setCancelled(true);
-	      return;
-	    }
-	    else if (Coins.getCoins(p) < 1200)
 	    {
 	      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
 	      e.setCancelled(true);
