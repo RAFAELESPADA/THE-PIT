@@ -91,8 +91,7 @@ if (e.getClickedInventory() == null) {
       p.getInventory().setItem(0, new ItemStack(Material.DIAMOND_SWORD));
       Coins.removeCoins(p, 200);
       e.setCancelled(true);
-
-      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
+      return;
     }
     else if (Coins.getCoins(p) < 200)
     {
@@ -113,8 +112,8 @@ if (e.getClickedInventory() == null) {
 	      p.getInventory().setHelmet(new ItemStack(Material.IRON_HELMET));
 	      Coins.removeCoins(p, 250);
 
-	      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
 	      e.setCancelled(true);
+	      return;
 	    }
 	    else if (Coins.getCoins(p) < 250)
 	    {
@@ -137,8 +136,8 @@ if (e.getClickedInventory() == null) {
 		      p.getInventory().setLeggings(new ItemStack(Material.DIAMOND_LEGGINGS));
 	      Coins.removeCoins(p, 250);
 
-	      p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
 	      e.setCancelled(true);
+	      return;
 	    }
 	    else if (Coins.getCoins(p) < 250)
 	    {
@@ -150,12 +149,10 @@ if (e.getClickedInventory() == null) {
 	  	
 	    if (Coins.getCoins(p) >= 1200)
 	    {
-	    	
-
-	        p.sendMessage(BukkitMain.messages.getString("NoFundsShop").replace("&", "§"));
 		      p.getInventory().addItem(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE));
 	      Coins.removeCoins(p, 1200);
 	      e.setCancelled(true);
+	      return;
 	    }
 	    else if (Coins.getCoins(p) < 1200)
 	    {
