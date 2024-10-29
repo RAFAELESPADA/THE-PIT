@@ -12,7 +12,9 @@ ArrowHit-Message: '&b%player% &7is on &c%health%&7 health.'
 StreakDestroyed: '&cYour killstreak has been destroyed by &e%player%'
 CoinsDoubled: '&bYou receive %coins% Coins (2X)'
 SpawnSeted: '&aYou seted the THEPIT spawn'
-
+NoFundsShop: '&cYou do not have sufficient gold to buy that upgrade'
+ShopInventoryName: 'Item Shop'
+ShopPriceLore: '&ePrice: '
 
 #Status message when you click stats item
 Status: '&e&lYour Stats &b&l%player%'

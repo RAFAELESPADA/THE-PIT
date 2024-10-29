@@ -254,6 +254,7 @@ loadTopPlayersHologram();
     	pm.registerEvents(new ThePitEditMode(), this);
     	pm.registerEvents(new AntiDeathDrop(this), this);
        	pm.registerEvents(new Streak(), this);
+       	pm.registerEvents(new Shop(this), this);
     }
 
 public static void darEfeito(Player p, PotionEffectType tipo, int duracao, int level)

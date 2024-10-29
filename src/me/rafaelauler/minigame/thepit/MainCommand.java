@@ -70,7 +70,7 @@ private static String text = "";
 /*  76 */   HashMap<String, Location> maps = new HashMap();
 /*  77 */   public static ArrayList<String> game = new ArrayList();
 public static ArrayList<Player> player = new ArrayList();
-/*  78 */   List<String> commands = Arrays.asList(new String[] { "admin", "list", "create", "delete", "1v1", "score", "setspawn", "spawn", "join", "leave", "reset", "coins", "setchallenge", "kit", "kitunlocker", "resetkit", "stats", "reload", "update" });
+/*  78 */   List<String> commands = Arrays.asList(new String[] { "admin", "list", "create", "delete", "1v1", "score", "setspawn", "spawn", "join", "leave", "reset", "coins", "setchallenge", "kit", "kitunlocker", "shop", "resetkit", "stats", "reload", "update" });
 /*     */   
 /*     */   public MainCommand() {}
 /*     */   
@@ -89,6 +89,8 @@ public static ArrayList<Player> player = new ArrayList();
 /* 110 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "join" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Join the PIT!");
 /* 111 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "leave" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Leave the PIT!");
 /* 112 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "setspawn" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Set spawn!");
+
+/* 112 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "shop" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Open thepit shop!");
 /* 114 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "stats" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "View stats!");
 /*     */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "spawn" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Returns to spawn");                              
 /* 116 */         sender.sendMessage(ChatColor.DARK_AQUA + " - " + ChatColor.AQUA + "/" + commandLabel + " " + ChatColor.GREEN + "info" + ChatColor.DARK_AQUA + " - " + ChatColor.GRAY + "Shows plugin info");
@@ -259,6 +261,13 @@ if (args[0].equalsIgnoreCase("setspawn"))
         return true;
       }
 }
+
+if (args[0].equalsIgnoreCase("shop"))
+/*     */       {
+	Player p = (Player)sender;
+Shop.openMenu(p);
+return true;
+      }
 if (args[0].equalsIgnoreCase("stats"))
 /*     */       {
 	Player p = (Player)sender;
