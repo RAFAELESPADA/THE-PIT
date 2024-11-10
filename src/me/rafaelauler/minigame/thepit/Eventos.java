@@ -300,6 +300,11 @@ import me.RafaelAulerDeMeloAraujo.TitleAPI.TitleAPI;
 		  }
 		  @EventHandler(priority = EventPriority.HIGHEST)
 		  public void onEntityDamageByEntity(final EntityDamageByEntityEvent event) {
+			  boolean isCitizensNPC = event.getEntity().hasMetadata("NPC");
+			  boolean isCitizensNPC2 = event.getDamager().hasMetadata("NPC");
+if (isCitizensNPC || isCitizensNPC2) {
+	return;
+}
 		  	if (event.getEntity() instanceof Player && (event.getDamager() instanceof Player)) {
 		  	if (MainCommand.game.contains(event.getEntity().getName()) && !MainCommand.game.contains(event.getDamager().getName())) {
 		  		event.getDamager().sendMessage(ChatColor.BLUE + "You cannot attack " + event.getEntity().getName() + " because he is on THEPIT and you are not");
@@ -578,7 +583,7 @@ p.teleport(lobby);
 			/* 235 */           p.setExp(0.0F);
 			/* 236 */           p.setExhaustion(20.0F);
 			/* 237 */           p.setFireTicks(0);
-			/* 238 */           p.setFoodLevel(20000);			TitleAPI.sendTitle(p, Integer.valueOf(40), Integer.valueOf(80), Integer.valueOf(40), BukkitMain.getInstance().getConfig().getString("Title.LeaveTitle"), BukkitMain.getInstance().getConfig().getString("Title.LeaveSubTitle"));
+			/* 238 */           p.setFoodLevel(20000);			TitleAPI.sendTitle(p, Integer.valueOf(40), Integer.valueOf(80), Integer.valueOf(40), BukkitMain.getInstance().getConfig().getString("Title.JoinTitle"), BukkitMain.getInstance().getConfig().getString("Title.JoinSubTitle"));
 
 			BukkitMain.tirarEfeitos(p);
 		}

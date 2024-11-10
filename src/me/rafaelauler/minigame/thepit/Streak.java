@@ -48,19 +48,20 @@ import net.wavemc.core.bukkit.account.WavePlayer;
 Player p = ev.getEntity();
 Player k = p.getKiller();
 boolean isCitizensNPC = p.hasMetadata("NPC");
+boolean isCitizensNPC2 = k.hasMetadata("NPC");
 
-double killstreak = XP.getXP(k);
 /*  46 */     if ((p.getKiller() instanceof Player))
 /*     */     {
 /*     */ 
-/*  49 */     
+/*  49 */     double killstreak = XP.getXP(k);
+
 if (!MainCommand.game.contains(k.getName())) {
 	return;
 }
 
 WavePlayer Sun8oxData = WaveBukkit.getInstance().getPlayerManager().getPlayer(k.getName());
 	
-if (isCitizensNPC && BukkitMain.getInstance().getConfig().getBoolean("BotsKillsAllowed")) {
+if ((isCitizensNPC || isCitizensNPC2)  && BukkitMain.getInstance().getConfig().getBoolean("BotsKillsAllowed")) {
 	Sun8oxData.getPvp().addthepitkills(1);
 	if (killstreak % BukkitMain.customization.getInt("XP-Required-To-LevelUP") == 0) {
 		Streak.sendToGame(String.valueOf(MainCommand.NomeServer + BukkitMain.messages.getString("LevelUP").replaceAll("%player%", k.getName()).replaceAll("%level%", Integer.toString(Level.getLevel(k)))).replaceAll("&", "§"));
