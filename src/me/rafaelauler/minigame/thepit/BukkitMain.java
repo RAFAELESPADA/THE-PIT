@@ -74,8 +74,8 @@ public static FileConfiguration customization = YamlConfiguration.loadConfigurat
     		/* 148 */       getConfig().options().copyDefaults(true);
     		/* 149 */       getConfig().options().copyHeader(true);
     		/* 150 */       saveConfig();
-    		/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[KP-PVP] §aThe server is using 1.14/1.15 MINECRAFT VERSION");
-    		/* 152 */       Bukkit.getConsoleSender().sendMessage("§e[KP-PVP] §aAltering config sounds to 1.14 Sounds...");
+    		/* 151 */       Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aThe server is using 1.14/1.15 MINECRAFT VERSION");
+    		/* 152 */       Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aAltering config sounds to 1.14 Sounds...");
     		getConfig().options().copyDefaults(true);
     		getConfig().options().copyHeader(true);
     		saveConfig();
@@ -109,15 +109,13 @@ public static FileConfiguration customization = YamlConfiguration.loadConfigurat
     		getConfig().set("Sound.StomperDamage", "BLOCK_ANVIL_LAND");
     		getConfig().set("Sound.AnchorHit", "BLOCK_ANVIL_LAND");
     		getConfig().set("Sound.RyuAbility", "ENTITY_GENERIC_EXPLODE");
-    		/* 178 */       Bukkit.getConsoleSender().sendMessage("§e[KP-PVP] §aDone! All Sounds have been modified to 1.14 Sounds.");
+    		/* 178 */       Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aDone! All Sounds have been modified to 1.14 Sounds.");
     		/*     */     }
-registerEvents();
-
 if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null){
-	/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[THEPIT] §aPlaceHolderAPI is found!");
-	/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[THEPIT] §aHooking into it!");
+	/* 151 */       Bukkit.getConsoleSender().sendMessage("Â§e[THEPIT] Â§aPlaceHolderAPI is found!");
+	/* 151 */       Bukkit.getConsoleSender().sendMessage("Â§e[THEPIT] Â§aHooking into it!");
     new PlaceHolderAPIHook(this).register();
-	/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[THEPIT] §aPlaceHolderAPI has hooked sucefully!");
+	/* 151 */       Bukkit.getConsoleSender().sendMessage("Â§e[THEPIT] Â§aPlaceHolderAPI has hooked sucefully!");
 }
 loadTopPlayersHologram();
   Bukkit.getServer().getPluginManager().registerEvents(this, this);
@@ -150,7 +148,15 @@ loadTopPlayersHologram();
   /*     */     {
   /* 144 */       System.out.println(e1.getMessage());
   /*     */     }
+  Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aRegistering plugin listeners...");
+	/*     */     
+  registerEvents();
+
+  Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aDone! Plugin listeners loaded!");
+
   saveDefaultConfig();
+
+  Bukkit.getConsoleSender().sendMessage("Â§e[THE-PIT] Â§aThe plugin has been enabled successfully!");
     }
     public static void handleTopPlayers(Location location) {
     	Plugin lb = Bukkit.getPluginManager().getPlugin("ajLeaderboards");
@@ -169,24 +175,24 @@ loadTopPlayersHologram();
     		return;
     	}
     		
-    		String header = "§e§lTop 15 players §a(THE PIT KILLS)";	
+    		String header = "Â§eÂ§lTop 15 players Â§a(THE PIT KILLS)";	
     			List<String> lines = Arrays.asList(header,
-    				"§61"  + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_1_alltime_name%" +
-    				" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_1_alltime_value%", "§62" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_2_alltime_name%" +
-    						" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_2_alltime_value%", "§63" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_3_alltime_name%" +
-    								" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_3_alltime_value%", "§64" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_4_alltime_name%" +
-    										" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_4_alltime_value%", "§65" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_5_alltime_name%" +
-    												" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_5_alltime_value%", "§66" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_6_alltime_name%" +
-    														" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_6_alltime_value%", "§67" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_7_alltime_name%" +
-    																" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_7_alltime_value%", "§68" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_8_alltime_name%" +
-    																		" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_8_alltime_value%", "§69" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_9_alltime_name%" +
-    																				" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_9_alltime_value%", "§610" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_10_alltime_name%" +
-    																						" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_10_alltime_value%", "§611" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_11_alltime_name%" +
-    																								" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_11_alltime_value%", "§612" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_12_alltime_name%" +
-    																										" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_12_alltime_value%", "§613" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_13_alltime_name%" +
-    																												" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_13_alltime_value%", "§614" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_14_alltime_name%" +
-    																														" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_14_alltime_value%", "§615" + "º " + "§e" + "%ajlb_lb_the-pit_player_kills_15_alltime_name%" +
-    																																" §fKills: §6" + "%ajlb_lb_the-pit_player_kills_15_alltime_value%");
+    				"Â§61"  + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_1_alltime_name%" +
+    				" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_1_alltime_value%", "Â§62" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_2_alltime_name%" +
+    						" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_2_alltime_value%", "Â§63" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_3_alltime_name%" +
+    								" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_3_alltime_value%", "Â§64" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_4_alltime_name%" +
+    										" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_4_alltime_value%", "Â§65" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_5_alltime_name%" +
+    												" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_5_alltime_value%", "Â§66" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_6_alltime_name%" +
+    														" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_6_alltime_value%", "Â§67" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_7_alltime_name%" +
+    																" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_7_alltime_value%", "Â§68" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_8_alltime_name%" +
+    																		" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_8_alltime_value%", "Â§69" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_9_alltime_name%" +
+    																				" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_9_alltime_value%", "Â§610" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_10_alltime_name%" +
+    																						" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_10_alltime_value%", "Â§611" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_11_alltime_name%" +
+    																								" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_11_alltime_value%", "Â§612" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_12_alltime_name%" +
+    																										" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_12_alltime_value%", "Â§613" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_13_alltime_name%" +
+    																												" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_13_alltime_value%", "Â§614" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_14_alltime_name%" +
+    																														" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_14_alltime_value%", "Â§615" + "Âº " + "Â§e" + "%ajlb_lb_the-pit_player_kills_15_alltime_name%" +
+    																																" Â§fKills: Â§6" + "%ajlb_lb_the-pit_player_kills_15_alltime_value%");
     		
     		
     			
