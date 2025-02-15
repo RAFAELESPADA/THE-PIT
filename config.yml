@@ -110,7 +110,7 @@ Sound:
 #Enable or disable command block feature on ThePit
 #true means enabled / false means disabled
 #Defaults to true
-EnableCommandBlockingInThePit: true
+EnableCommandBlockingInThePit: false
 
 #Enable or disable hunger on ThePit
 DisableHungerOnThePit: true
@@ -153,6 +153,45 @@ SendIPAddressData: true
 #too high numbers can throw you to minecraft space! 
 #Play around with that number to see what you want in sponge boost
 SpongeBoostAmplifier: 8
+
+#Enable or disable hard command block feature on kitpvp
+#If this is true only these commands can be executed while in kitpvp
+#true means enabled / false means disabled
+#THIS IS A COMMAND WHITELIST
+#Defaults to true
+EnableOnlyCommandsAllowedInKitPvP: true
+
+#Put here the cmds that are be allowed in kitpvp
+#Bypass permission: kitpvp.unblockedcmds
+ALLOWED_COMMANDS:
+- /kitpvp
+- /tell
+- /msg
+- /w
+- /adminmode
+- /sc
+- /tp
+- /tpall
+- /kpkitmenu
+- /tag
+- /mute
+- /kick
+- /warn
+- /ac
+- /staffchat
+- /ban
+- /tag
+- /kp
+- /kitpvp
+- /stats
+- /kpkills
+- /kpsetlevel
+- /givecoins
+- /coins
+- /score
+- /sb
+- /gm
+- /gamemode
 
 #Put here the cmds that are be blocked in ThePit
 #Bypass permission: ThePit.unblockedcmds
