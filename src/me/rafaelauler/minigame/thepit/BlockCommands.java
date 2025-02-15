@@ -23,11 +23,21 @@ public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent e) {
     list.stream().filter(cmd -> e.getMessage().toLowerCase().contains(cmd.toLowerCase())).forEach(msg -> {
           e.setCancelled(true);
           e.getPlayer().closeInventory();
-          e.getPlayer().sendMessage(String.valueOf(this.main.getConfig().getString("Prefix").replace("&", "ง")) + String.valueOf(this.main.getConfig().getString("Message.BlockedCMD-OnThePit").replace("&", "ง")));
+          e.getPlayer().sendMessage(String.valueOf(this.main.getConfig().getString("Prefix").replace("&", "ยง")) + String.valueOf(this.main.getConfig().getString("Message.BlockedCMD-OnThePit").replace("&", "ยง")));
         });
   } 
 }
-
+@EventHandler
+public void onPlayerCommandPreproctess(PlayerCommandPreprocessEvent e) {
+  if (!e.getPlayer().hasPermission("kitpvp.unblockedcmds") && !e.getPlayer().hasPermission("kitpvp.*") && !e.getPlayer().isOp() && (MainCommand.game.contains(e.getPlayer().getName()) && (BukkitMain.getInstance().getConfig().getString("EnableOnlyCommandsAllowedInKitPvP").equalsIgnoreCase("true")))) {
+	  java.util.List<String> list = BukkitMain.plugin.getConfig().getStringList("ALLOWED_COMMANDS");
+  if (!list.contains(e.getMessage())) {
+          e.setCancelled(true);
+          e.getPlayer().closeInventory();
+          e.getPlayer().sendMessage(String.valueOf(this.main.getConfig().getString("Prefix").replace("&", "ยง")) + String.valueOf(this.main.getConfig().getString("Message.BlockedCMD-OnKitPvP").replace("&", "๏ฟฝ")));
+  }
+  } 
+}
 }
 /*    */ 
 
